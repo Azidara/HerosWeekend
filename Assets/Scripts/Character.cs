@@ -15,7 +15,7 @@ namespace HWeekend{
         public Abilities.Ability secondary_ability;
         private Rigidbody2D rb;
 
-        void Awake(){
+        protected virtual void Awake(){
             rb = this.GetComponent<Rigidbody2D>();
         }
 
