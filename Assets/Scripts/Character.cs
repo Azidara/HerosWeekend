@@ -6,7 +6,7 @@ namespace HWeekend{
     [RequireComponent(typeof(Rigidbody2D))]
     public class Character : MonoBehaviour
     {
-        //public Animator animator = null;
+        public Animator animator;
 
         public Vector3 move_input;
         public float speed = 10f;
@@ -39,14 +39,13 @@ namespace HWeekend{
         // Update is called once per frame
         void Update()
         {
-            //Vector3 movement = move_input * speed;
-            /*
+            Vector3 movement = move_input * speed;
+            
             animator.SetFloat("Horizontal", movement.x);
             animator.SetFloat("Vertical", movement.y);
-            animator.SetFloat("Magnitude", movement.magnitude);
-            */
+            // animator.SetFloat("Magnitude", movement.magnitude);
+
             rb.velocity = move_input * speed;
-            //this.transform.position += movement * Time.deltaTime;
         }
     }
 }
