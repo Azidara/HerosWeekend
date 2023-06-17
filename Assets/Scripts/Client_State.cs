@@ -9,7 +9,7 @@ namespace HWeekend{
             get {return _instance ?? (_instance = new GameObject("Client_State").AddComponent<Client_State>());}
         }
 
-        public Player_Character c;
+        public Player_Character? c = null;
 
         void Awake() {
             // Need to double check this is working correct but pretty sure it is 
@@ -18,6 +18,12 @@ namespace HWeekend{
             }
             else {
                 _instance = this;
+            }
+        }
+
+        void Start() {
+            if (c == null){
+                c = Resources.Load<Player_Character>("Default_Character");
             }
         }
 

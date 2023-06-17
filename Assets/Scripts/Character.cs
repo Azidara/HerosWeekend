@@ -8,6 +8,7 @@ namespace HWeekend{
         public new Transform camera;
         public float speed = 10f;
         public Vector2 respawn_position = new Vector2(0,0);
+        public Vector3 movement;
 
         public void teleport(Vector2 vec){
             this.teleport(vec.x,vec.y);
@@ -19,7 +20,7 @@ namespace HWeekend{
             this.move(vec.x,vec.y);
         }
         public void move(float x, float y){
-            this.transform.position += new Vector3(x,y,0);
+            movement = new Vector3(x,y,0);
         }
 
         public void respawn() {
@@ -29,7 +30,7 @@ namespace HWeekend{
         // Update is called once per frame
         void Update()
         {
-            
+            this.transform.position += movement * speed * Time.deltaTime;
         }
     }
 }

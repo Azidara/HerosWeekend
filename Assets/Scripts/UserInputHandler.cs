@@ -6,7 +6,16 @@ using UnityEngine.InputSystem;
 public class UserInputHandler : MonoBehaviour
 {
     public HWeekend.Client_State client;
-    public PlayerInput _inputManager;
+    public InputAction playerControls;
+
+    private void OnEnable()
+    {
+        playerControls.Enable();
+    }
+
+    private void OnDisable(){
+        playerControls.Disable();
+    }
 
     void OnMove(InputValue value) {
         client.c.move(value.Get<Vector2>());

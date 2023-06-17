@@ -1,8 +1,8 @@
 {
-    "name": "New Controls",
+    "name": "PlayerControls",
     "maps": [
         {
-            "name": "Main",
+            "name": "Player",
             "id": "c263e722-4ccb-4ce2-8865-9b9f0a8b6cba",
             "actions": [
                 {
@@ -239,12 +239,24 @@
         {
             "name": "Keyboard",
             "bindingGroup": "Keyboard",
-            "devices": []
+            "devices": [
+                {
+                    "devicePath": "<Keyboard>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
         },
         {
             "name": "Gamepad",
             "bindingGroup": "Gamepad",
-            "devices": []
+            "devices": [
+                {
+                    "devicePath": "<Gamepad>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
         }
     ]
 }
