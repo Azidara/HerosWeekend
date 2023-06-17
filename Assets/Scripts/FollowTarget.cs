@@ -9,7 +9,7 @@ public class FollowTarget : MonoBehaviour
 
     void Start(){
         if (target == null){
-            target = HWeekend.Client_State.getInstance.c.gameObject;
+            target = HWeekend.Client_State.getInstance.character.gameObject;
         }
     }
     // Update is called once per frame

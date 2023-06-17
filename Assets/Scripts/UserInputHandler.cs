@@ -18,11 +18,21 @@ public class UserInputHandler : MonoBehaviour
     }
 
     void OnMove(InputValue value) {
-        client.c.move(value.Get<Vector2>());
+        client.character.move(value.Get<Vector2>());
+    }
+
+    void OnAttackOne(){
+        Debug.Log("Primary Attack");
+        client.character.primary_attack();
+    }
+
+    void OnAttackTwo(){
+        Debug.Log("Secondary Attack");
+        client.character.secondary_attack();
     }
 
     void OnRespawn(){
-        client.c.respawn();
+        client.character.respawn();
     }
 
     void OnDebugKey() {
