@@ -43,12 +43,12 @@
                 },
                 {
                     "name": "AttackTwo",
-                    "type": "Button",
+                    "type": "PassThrough",
                     "id": "18554b00-e4cf-488e-9b9c-17bff72857f8",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": false
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
