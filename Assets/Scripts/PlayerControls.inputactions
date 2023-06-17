@@ -34,12 +34,12 @@
                 },
                 {
                     "name": "AttackOne",
-                    "type": "Button",
+                    "type": "PassThrough",
                     "id": "23a4381c-0b54-4b98-bac2-e00854d0fb70",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": false
+                    "initialStateCheck": true
                 },
                 {
                     "name": "AttackTwo",

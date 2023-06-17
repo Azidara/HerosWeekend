@@ -15,12 +15,12 @@ namespace HWeekend{
         }
         public void primary_attack() {
             Vector2 direction =  GetAimPoint() - new Vector2(attack_pivot.position.x, attack_pivot.position.y);
-            primary_ability.Activate(attack_pivot.position, direction);
+            primary_ability.Activate(attack_pivot.position, direction, this.gameObject);
         }
 
         public void secondary_attack() {
             Vector2 direction = GetAimPoint() - new Vector2(attack_pivot.position.x, attack_pivot.position.y);
-            primary_ability.Activate(attack_pivot.position, direction);
+            secondary_ability.Activate(attack_pivot.position, direction, this.gameObject);
         }
 
         private Vector2 GetAimPoint(){

@@ -2,6 +2,7 @@ using System.IO;
 using UnityEngine;
 using UnityEditor;
 
+/*
 namespace HWeekend.Editor{
     public class MyScriptableObjects : MonoBehaviour
     {
@@ -13,7 +14,7 @@ namespace HWeekend.Editor{
 
             Abilities.Projectile_Ability asset = ScriptableObject.CreateInstance<Abilities.Projectile_Ability>();
 
-            AssetDatabase.CreateAsset(asset, Path.Combine(AbilitiesPath, "NewProjectileAbility.asset"));
+            AssetDatabase.CreateAsset(asset, Path.Combine(AbilitiesPath, "NewProjectileAbilityTemplate.asset"));
             AssetDatabase.SaveAssets();
 
             EditorUtility.FocusProjectWindow();
@@ -21,4 +22,4 @@ namespace HWeekend.Editor{
         }
     }
 }
-
+*/

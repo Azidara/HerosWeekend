@@ -109,7 +109,7 @@ GameObject:
   - component: {fileID: 8436752604187707150}
   m_Layer: 0
   m_Name: Tree
-  m_TagString: Untagged
+  m_TagString: Projectile Blocker
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

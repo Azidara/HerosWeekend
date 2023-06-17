@@ -8,6 +8,9 @@ public class UserInputHandler : MonoBehaviour
     public HWeekend.Client_State client;
     public InputAction playerControls;
 
+    public bool attack1;
+    public bool attack2;
+
     private void OnEnable()
     {
         playerControls.Enable();
@@ -22,13 +25,11 @@ public class UserInputHandler : MonoBehaviour
     }
 
     void OnAttackOne(){
-        Debug.Log("Primary Attack");
-        client.character.primary_attack();
+        attack1 = !attack1;
     }
 
     void OnAttackTwo(){
-        Debug.Log("Secondary Attack");
-        client.character.secondary_attack();
+        attack2 = !attack2;
     }
 
     void OnRespawn(){
@@ -37,5 +38,14 @@ public class UserInputHandler : MonoBehaviour
 
     void OnDebugKey() {
         Debug.Log("Debug key was triggered");
+    }
+
+    void Update(){
+        if (attack1){
+            client.character.primary_attack();
+        }
+        if (attack2){
+            client.character.secondary_attack();
+        }
     }
 }
