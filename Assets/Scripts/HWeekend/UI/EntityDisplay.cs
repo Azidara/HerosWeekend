@@ -40,7 +40,7 @@ namespace HWeekend.UI {
         }
 
         void syncHealthBar(){
-            health_bar_image.fillAmount = Mathf.Max(0, character.health/character.max_health);
+            health_bar_image.fillAmount = Mathf.Max(0,  (float)character.health/character.max_health);
         }
     }
 }
