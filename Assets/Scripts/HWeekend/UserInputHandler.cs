@@ -11,6 +11,10 @@ public class UserInputHandler : MonoBehaviour
     public bool attack1;
     public bool attack2;
 
+    void Awake(){
+        client = HWeekend.Client_State.getInstance;
+    }
+
     private void OnEnable()
     {
         playerControls.Enable();
@@ -18,6 +22,7 @@ public class UserInputHandler : MonoBehaviour
 
     private void OnDisable(){
         playerControls.Disable();
+        
     }
 
     void OnMove(InputValue value) {

@@ -37,26 +37,25 @@ namespace HWeekend{
             rb = this.GetComponent<Rigidbody2D>();
 
             // Initalize Actions to a blank action if they are null;
-            Debug.Log("Test");
-            primary_attack = initalizeAbility(primary_attack, "primary_attack");
-            secondary_attack = initalizeAbility(secondary_attack, "secondary_attack");
-            action1 = initalizeAbility(action1, "action1");
-            action2 = initalizeAbility(action2, "action2");
-            action3 = initalizeAbility(action3, "action3");
-            action4 = initalizeAbility(action4, "action4");
-            action5 = initalizeAbility(action5, "action5");
+            primary_attack = initalizeAbility(primary_attack, "PrimaryAttack");
+            secondary_attack = initalizeAbility(secondary_attack, "SecondaryAttack");
+            action1 = initalizeAbility(action1, "Action1");
+            action2 = initalizeAbility(action2, "Action2");
+            action3 = initalizeAbility(action3, "Action3");
+            action4 = initalizeAbility(action4, "Action4");
+            action5 = initalizeAbility(action5, "Action5");
         }
 
         private Ability initalizeAbility(Ability a, string name){
             if (a == null){
-                string obj_path = Path.Combine(ResourcesIndex.abilities_path, "EmptyAbility");
+                string obj_path = Path.Combine(ResourcesIndex.ability_prefabs_path, "EmptyAbility");
                 GameObject emptyPrefab = Resources.Load(obj_path) as GameObject;
                 if (emptyPrefab == null){Debug.LogError($"Resources.Load returned null for path '{obj_path}'");}
                 GameObject emptyGO = Instantiate(emptyPrefab);
                 emptyGO.transform.SetParent(this.transform.Find("Abilities").transform);
-                emptyGO.name = name;
                 a = emptyGO.GetComponent<Ability>();
             }
+            a.gameObject.name = name;
             a.source = this;
             return a;
         }

@@ -54,8 +54,8 @@ MonoBehaviour:
   animator: {fileID: 3393268810601060876}
   move_input: {x: 0, y: 0, z: 0}
   aim_input: {x: 0, y: 0}
-  primary_attack: {fileID: 0}
-  secondary_attack: {fileID: 0}
+  primary_attack: {fileID: 4206572685925403142}
+  secondary_attack: {fileID: 7923405525949479672}
   action1: {fileID: 0}
   action2: {fileID: 0}
   action3: {fileID: 0}
@@ -252,7 +252,7 @@ GameObject:
   m_Component:
   - component: {fileID: 603765769670606374}
   m_Layer: 0
-  m_Name: abilities
+  m_Name: Abilities
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -380,6 +380,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1615848934087087264, guid: 6c076e1ce5effec46b9476fc6185ca75, type: 3}
   m_PrefabInstance: {fileID: 3500258685402023920}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &4206572685925403142 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 789208730300108278, guid: 6c076e1ce5effec46b9476fc6185ca75, type: 3}
+  m_PrefabInstance: {fileID: 3500258685402023920}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9109714777ddc80458947adf1621304c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &8185484745030473621
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -446,3 +457,14 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7031541472623030234, guid: 4e4b47383971ad24f9fb649a04d907a8, type: 3}
   m_PrefabInstance: {fileID: 8185484745030473621}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &7923405525949479672 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2048355361575824749, guid: 4e4b47383971ad24f9fb649a04d907a8, type: 3}
+  m_PrefabInstance: {fileID: 8185484745030473621}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9109714777ddc80458947adf1621304c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

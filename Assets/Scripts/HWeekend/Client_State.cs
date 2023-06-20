@@ -22,6 +22,7 @@ namespace HWeekend{
             }
 
             if (character == null){
+                //Debug.Log(character.gameObject.name);
                 GameObject charGO = Instantiate(Resources.Load<GameObject>(Path.Combine("Prefabs","Default_Character")));
                 character = charGO.GetComponent<Player_Character>();
             }

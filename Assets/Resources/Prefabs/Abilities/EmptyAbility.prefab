@@ -44,6 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 100e55111e3e6ef4f94926d5a6de22c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  icon: {fileID: 21300000, guid: d41920c459c9a9548a38387c00ad13b5, type: 3}
   ability_name: Empty
   description: Placeholder for null abilities
   cooldown: 0
