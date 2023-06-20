@@ -153,6 +153,7 @@ Transform:
   m_Children:
   - {fileID: 1105924389}
   - {fileID: 563218935}
+  - {fileID: 1771194621929466249}
   m_Father: {fileID: 1371962153}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1475,7 +1476,7 @@ MonoBehaviour:
   secondary_attack: {fileID: 563218934}
   action1: {fileID: 1105924388}
   action2: {fileID: 563218934}
-  action3: {fileID: 0}
+  action3: {fileID: 7308420737559243582}
   action4: {fileID: 0}
   action5: {fileID: 0}
 --- !u!4 &1371962153
@@ -2348,6 +2349,11 @@ TilemapRenderer:
   m_Mode: 0
   m_DetectChunkCullingBounds: 0
   m_MaskInteraction: 0
+--- !u!4 &1771194621929466249 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8840234121460496464, guid: 2c0b0488edb060a49b48d84c3db816a6, type: 3}
+  m_PrefabInstance: {fileID: 4364326195923665807}
+  m_PrefabAsset: {fileID: 0}
 --- !u!483693784 &1948506496477425248
 TilemapRenderer:
   m_ObjectHideFlags: 0
@@ -3047,6 +3053,67 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1001 &4364326195923665807
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 23421288}
+    m_Modifications:
+    - target: {fileID: 340980632022898955, guid: 2c0b0488edb060a49b48d84c3db816a6, type: 3}
+      propertyPath: m_Name
+      value: RadialShotAbility
+      objectReference: {fileID: 0}
+    - target: {fileID: 8840234121460496464, guid: 2c0b0488edb060a49b48d84c3db816a6, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8840234121460496464, guid: 2c0b0488edb060a49b48d84c3db816a6, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.4554801
+      objectReference: {fileID: 0}
+    - target: {fileID: 8840234121460496464, guid: 2c0b0488edb060a49b48d84c3db816a6, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.46410415
+      objectReference: {fileID: 0}
+    - target: {fileID: 8840234121460496464, guid: 2c0b0488edb060a49b48d84c3db816a6, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.076652214
+      objectReference: {fileID: 0}
+    - target: {fileID: 8840234121460496464, guid: 2c0b0488edb060a49b48d84c3db816a6, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8840234121460496464, guid: 2c0b0488edb060a49b48d84c3db816a6, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8840234121460496464, guid: 2c0b0488edb060a49b48d84c3db816a6, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8840234121460496464, guid: 2c0b0488edb060a49b48d84c3db816a6, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8840234121460496464, guid: 2c0b0488edb060a49b48d84c3db816a6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8840234121460496464, guid: 2c0b0488edb060a49b48d84c3db816a6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8840234121460496464, guid: 2c0b0488edb060a49b48d84c3db816a6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2c0b0488edb060a49b48d84c3db816a6, type: 3}
 --- !u!66 &4720312213888060361
 CompositeCollider2D:
   m_ObjectHideFlags: 0
@@ -3391,6 +3458,17 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &7308420737559243582 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6240057109461509318, guid: 2c0b0488edb060a49b48d84c3db816a6, type: 3}
+  m_PrefabInstance: {fileID: 4364326195923665807}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9109714777ddc80458947adf1621304c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!483693784 &7403492759013937105
 TilemapRenderer:
   m_ObjectHideFlags: 0

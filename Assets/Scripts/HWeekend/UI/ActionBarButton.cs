@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.InputSystem;
+using UnityEngine.EventSystems;
 using TMPro;
 
 namespace HWeekend{
@@ -81,16 +82,26 @@ namespace HWeekend{
 
         public void syncCooldown(){
             if (ability.cooldown_timer > 0){
-                cooldown_text.gameObject.SetActive(true);
                 cooldown_image.gameObject.SetActive(true);
-                cooldown_text.text = $"{Mathf.RoundToInt(ability.cooldown_timer).ToString()}s";
+                cooldown_text.gameObject.SetActive(true);
+                cooldown_text.text = $"{formatCooldownText(ability.cooldown_timer)}";
                 cooldown_image.fillAmount = ability.cooldown_timer/ability.cooldown;
             }
             else {
                 cooldown_text.gameObject.SetActive(false);
                 cooldown_image.gameObject.SetActive(false);
+            } 
+        }
+
+        private string formatCooldownText(float t){
+            string output = $"{t.ToString("0.0")}s";
+            if (t > 10){
+                output = $"{Mathf.FloorToInt(t)}s";
             }
-            
+            if (t > 120){
+                output = $"{Mathf.FloorToInt(t/60)}mins";
+            }
+            return output;
         }
 
         // Update is called once per frame

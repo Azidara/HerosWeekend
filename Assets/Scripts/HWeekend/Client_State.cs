@@ -7,7 +7,19 @@ namespace HWeekend{
         protected static Client_State _instance;
         public static Client_State getInstance{ // Singleton Accessor
             // If instance is null create a new instance otherwise return the existing one.
-            get {return _instance ?? (_instance = new GameObject("Client_State").AddComponent<Client_State>());}
+            get {
+                if (_instance == null){
+                    // Find any existing object in scene
+                    if(Object.FindObjectsOfType<Client_State>().Length > 0){
+                        _instance = Object.FindObjectsOfType<Client_State>()[0];
+                    }
+                    // Create a new one if none exist
+                    else {
+                        _instance = new GameObject("Client_State").AddComponent<Client_State>();
+                    }
+                }
+                return _instance;
+            }
         }
 
         public Player_Character? character = null;
