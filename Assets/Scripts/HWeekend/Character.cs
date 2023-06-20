@@ -18,14 +18,16 @@ namespace HWeekend{
         #endregion
 
         #region State Variables
+        public Vector3 move_input;
+        public Vector2 aim_input;
         [SerializeField] private int _health;
+        [SerializeField] private int last_health;
         #endregion
 
         #region Reference Variables
         public Animator animator;
-        private Rigidbody2D rb;
-        public Vector3 move_input;
-        public Vector2 aim_input;
+        [SerializeField] private Rigidbody2D rb;
+        [SerializeField] private Collider2D hitbox;
 
         #region Actions
         public Ability primary_attack;
@@ -40,7 +42,7 @@ namespace HWeekend{
 
         #region Accessors
         public string character_name {get {return _character_name;} set{_character_name = value; OnCharacterNameChange?.Invoke();}}
-        public int health {get{return _health;} set{_health = value; OnHealthChange?.Invoke();}}
+        public int health {get{return _health;} set{last_health = _health; _health = value; OnHealthChange?.Invoke();}}
         #endregion
 
         #region Events
@@ -51,6 +53,7 @@ namespace HWeekend{
 
         protected virtual void Awake(){
             rb = this.GetComponent<Rigidbody2D>();
+            hitbox = this.transform.Find("HitBox").GetComponent<Collider2D>();
 
             // Initalize Actions to a blank action if they are null;
             primary_attack = initalizeAbility(primary_attack, "PrimaryAttack");
@@ -60,6 +63,9 @@ namespace HWeekend{
             action3 = initalizeAbility(action3, "Action3");
             action4 = initalizeAbility(action4, "Action4");
             action5 = initalizeAbility(action5, "Action5");
+
+            // Subscribe to Events
+            this.OnHealthChange += HealthCheck;
 
             // Initalize State Variables
             _health = max_health;
@@ -90,6 +96,20 @@ namespace HWeekend{
         }
         public void move(float x, float y){
             move_input = new Vector3(x,y,0);
+        }
+
+        private void HealthCheck(){
+            if (_health <= 0 && last_health > 0){
+                OnDeath();
+            }
+        }
+
+        private void OnDeath(){
+            Debug.Log($"{this.name} died");
+            hitbox.gameObject.SetActive(false);
+            // Tempory animation
+            this.transform.Rotate(0,0,90);
+            Destroy(this.gameObject, 5.0f);
         }
 
         public void respawn() {
