@@ -17,7 +17,16 @@ public class Projectile : MonoBehaviour
     }
 
     private void evalInteraction(GameObject other){
-        if (other != source){
+        // Check if collision is with source
+        Collider2D[] source_colliders = source.GetComponentsInChildren<Collider2D>();
+        bool collided_with_source = false;
+        foreach (Collider2D c in source_colliders){
+            if (c.gameObject == other.gameObject){
+                collided_with_source = true;
+            }
+        }
+
+        if (!collided_with_source){
             if (other.CompareTag("Entity")) {
                 Destroy(gameObject);
                 Debug.Log($"{this.name} hit {other.name}");

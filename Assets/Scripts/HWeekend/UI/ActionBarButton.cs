@@ -4,10 +4,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.InputSystem;
-using UnityEngine.EventSystems;
 using TMPro;
 
-namespace HWeekend{
+namespace HWeekend.UI{
     public class ActionBarButton : MonoBehaviour
     {
         #region Reference Variables
@@ -30,8 +29,7 @@ namespace HWeekend{
         #endregion
 
         void Awake(){
-            // Make sure references are not null
-            
+            // Initalize References
             ability_button ??= this.GetComponent<Button>();
             hotkey_text ??= this.transform.Find("HotkeyText").GetComponent<TMP_Text>();
             item_count_text ??= this.transform.Find("ItemCountText").GetComponent<TMP_Text>();

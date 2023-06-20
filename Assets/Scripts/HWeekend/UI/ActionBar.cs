@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace HWeekend{
+namespace HWeekend.UI{
     public class ActionBar : MonoBehaviour
     {
         #region Reference Variables
@@ -28,17 +28,22 @@ namespace HWeekend{
             action3.input_action_name = "ActionButton3";
             action4.input_action_name = "ActionButton4";
             action5.input_action_name = "ActionButton5";
+
+            // Subscribe to events
+            Client_State.getInstance.OnCharacterChange += syncActionBar;
         }
 
         void Start(){
-            // Initalize state information
+            syncActionBar();
+        }
+
+        void syncActionBar(){
+            character = Client_State.getInstance.character;
             action1.ability = character.action1;
             action2.ability = character.action2;
             action3.ability = character.action3;
             action4.ability = character.action4;
             action5.ability = character.action5;
-
-            
         }
     }
 }

@@ -10,10 +10,15 @@ namespace HWeekend{
     [RequireComponent(typeof(Rigidbody2D))]
     public class Character : MonoBehaviour
     {
-        
         #region Configurable Variables
+        [SerializeField] private string _character_name;
+        public int max_health = 10;
         public float speed = 10f;
         public Vector2 respawn_position = new Vector2(0,0);
+        #endregion
+
+        #region State Variables
+        [SerializeField] private int _health;
         #endregion
 
         #region Reference Variables
@@ -21,7 +26,6 @@ namespace HWeekend{
         private Rigidbody2D rb;
         public Vector3 move_input;
         public Vector2 aim_input;
-        #endregion
 
         #region Actions
         public Ability primary_attack;
@@ -32,6 +36,18 @@ namespace HWeekend{
         public Ability action4;
         public Ability action5;
         #endregion
+        #endregion
+
+        #region Accessors
+        public string character_name {get {return _character_name;} set{_character_name = value; OnCharacterNameChange?.Invoke();}}
+        public int health {get{return _health;} set{_health = value; OnHealthChange?.Invoke();}}
+        #endregion
+
+        #region Events
+        public VoidDelegate OnCharacterNameChange;
+        public VoidDelegate OnHealthChange;
+        #endregion
+        
 
         protected virtual void Awake(){
             rb = this.GetComponent<Rigidbody2D>();
@@ -44,6 +60,9 @@ namespace HWeekend{
             action3 = initalizeAbility(action3, "Action3");
             action4 = initalizeAbility(action4, "Action4");
             action5 = initalizeAbility(action5, "Action5");
+
+            // Initalize State Variables
+            _health = max_health;
         }
 
         private Ability initalizeAbility(Ability a, string name){

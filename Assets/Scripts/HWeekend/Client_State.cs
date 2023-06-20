@@ -4,7 +4,13 @@ using UnityEngine;
 namespace HWeekend{
     public class Client_State : MonoBehaviour
     {
+        #region Reference Variables
         protected static Client_State _instance;
+        [SerializeField] private Player_Character? _character = null;
+        #endregion
+
+        #region Accessors
+        public Player_Character character {get{return _character;} set{_character = value; OnCharacterChange?.Invoke();}}
         public static Client_State getInstance{ // Singleton Accessor
             // If instance is null create a new instance otherwise return the existing one.
             get {
@@ -21,8 +27,11 @@ namespace HWeekend{
                 return _instance;
             }
         }
+        #endregion
 
-        public Player_Character? character = null;
+        #region Events
+        public VoidDelegate OnCharacterChange;
+        #endregion
 
         void Awake() {
             // Need to double check this is working correct but pretty sure it is 
