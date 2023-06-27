@@ -1,6 +1,7 @@
 using System.IO;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Netcode;
 using UnityEngine;
 
 
@@ -8,7 +9,7 @@ using HWeekend.Abilities;
 
 namespace HWeekend{
     [RequireComponent(typeof(Rigidbody2D))]
-    public class Character : MonoBehaviour
+    public class Character : NetworkBehaviour
     {
         #region Configurable Variables
         [SerializeField] private string _character_name;
