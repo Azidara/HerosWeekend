@@ -13,7 +13,6 @@ namespace HWeekend.Abilities{
         public bool isConsumable;
         public int uses_left;
 
-        
         public Character source;
 
         protected virtual void action(Vector3 position, Vector2 direction, GameObject source = null) {Debug.Log("Default Ability doesn't do anything.");}

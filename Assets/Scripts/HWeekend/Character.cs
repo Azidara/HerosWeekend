@@ -9,7 +9,7 @@ using HWeekend.Abilities;
 
 namespace HWeekend{
     [RequireComponent(typeof(Rigidbody2D))]
-    public class Character : NetworkBehaviour
+    public class Character : NetworkBehaviour, IDamageable, IHealable
     {
         #region Configurable Variables
         [SerializeField] private string _character_name;
@@ -21,6 +21,7 @@ namespace HWeekend{
         #region State Variables
         public Vector3 move_input;
         public Vector2 aim_input;
+        [SerializeField] private bool _alive;
         [SerializeField] private int _health;
         [SerializeField] private int last_health;
         #endregion
@@ -99,6 +100,18 @@ namespace HWeekend{
             move_input = new Vector3(x,y,0);
         }
 
+        public void respawn() {
+            this.transform.position = new Vector3(respawn_position.x, respawn_position.y, 0);
+        }
+
+        public void Damage(float amount) {
+            this.health -= (int)Mathf.Floor(amount);
+        }
+
+        public void Heal(float amount) {
+            this.health += (int)Mathf.Floor(amount);
+        }
+
         private void HealthCheck(){
             if (_health <= 0 && last_health > 0){
                 OnDeath();
@@ -111,10 +124,6 @@ namespace HWeekend{
             // Tempory animation
             this.transform.Rotate(0,0,90);
             Destroy(this.gameObject, 5.0f);
-        }
-
-        public void respawn() {
-            this.transform.position = new Vector3(respawn_position.x, respawn_position.y, 0);
         }
 
         // Update is called once per frame
